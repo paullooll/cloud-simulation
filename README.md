@@ -14,6 +14,11 @@ Built for a 15-minute graduate IT class talk at West Visayas State University, C
 - The engine is pure TypeScript under `src/engine/`. The UI only reads the result.
 - A seed makes a run repeatable. Same seed + same settings = same result.
 
+## Guides
+
+- `Cloud-Resource-Lab-How-It-Works.pdf` is a 12-page, step-by-step guide to the simulation itself. It covers task generation, the initial state, all 10 phases of a tick, a worked micro-run, every scheduler, auto-scaling, pricing and spot interruptions, metrics, and seed-16 numbers to verify.
+- `Cloud-Resource-Lab-Presentation-Guide.pdf` is a 10-page, click-by-click script for the 15-minute talk. It includes a pre-flight checklist, timed run sheet, exact demo numbers, speaker lines, discussion prompts, and a recovery plan.
+
 ## Run locally
 
 Requires Node.js 18 or newer.

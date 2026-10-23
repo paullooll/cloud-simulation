@@ -2,8 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import { ComparePage } from './pages/ComparePage';
 import { DemoPage } from './pages/DemoPage';
-import { DiscussionPage } from './pages/DiscussionPage';
-import { LearnPage } from './pages/LearnPage';
 import { SimulatePage } from './pages/SimulatePage';
 import { DEFAULT_CONFIG, makeConfig } from './engine/defaults';
 import { simulate } from './engine/simulate';
@@ -127,8 +125,6 @@ export default function App() {
             }}
           />
         ) : null}
-        {tab === 'learn' ? <LearnPage /> : null}
-        {tab === 'discussion' ? <DiscussionPage /> : null}
       </main>
 
       <footer className="site-footer">

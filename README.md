@@ -9,8 +9,6 @@ Built for a 15-minute graduate IT class talk at West Visayas State University, C
 - **Simulate:** four schedulers (FCFS, SJF, Round Robin, Priority), auto-scaling with cooldown and start delay, on-demand / reserved / spot pricing, live servers and queue, live charts, results, scheduler example, and a trade-off calculator.
 - **Compare:** two setups on the same workload and seed, with cost, wait, and utilization differences.
 - **Guided demo:** four steps: no auto-scaling, auto-scaling on, spot pricing, Round Robin.
-- **Learn:** short cards, definitions, and the AWS / Azure / Google Cloud pricing name table.
-- **Discussion:** two class questions with hidden guidance.
 - The engine is pure TypeScript under `src/engine/`. The UI only reads the result.
 - A seed makes a run repeatable. Same seed + same settings = same result.
 
@@ -80,7 +78,7 @@ If you prefer a manual deploy, run `npm run build` and publish the `dist` folder
 src/
   engine/        schedulers, autoscaler, pricing, workload, simulate, insights, tests
   components/    controls, live view, charts, results, calculator, example, tooltips
-  pages/         Simulate, Compare, Demo, Learn, Discussion
+  pages/         Simulate, Compare, Demo
   content/       term definitions
   ui/            display helpers
 ```

@@ -7,14 +7,12 @@ import { DEFAULT_CONFIG, makeConfig } from './engine/defaults';
 import { simulate } from './engine/simulate';
 import type { SimConfig } from './engine/types';
 
-type Tab = 'simulate' | 'compare' | 'demo' | 'learn' | 'discussion';
+type Tab = 'simulate' | 'compare' | 'demo';
 
 const TABS: { id: Tab; label: string; demo?: boolean }[] = [
   { id: 'simulate', label: 'Simulate' },
   { id: 'compare', label: 'Compare' },
   { id: 'demo', label: 'Guided demo', demo: true },
-  { id: 'learn', label: 'Learn' },
-  { id: 'discussion', label: 'Discussion' },
 ];
 
 function getInitialLargeText(): boolean {

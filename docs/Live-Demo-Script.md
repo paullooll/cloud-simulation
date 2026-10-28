@@ -1,8 +1,8 @@
 # Cloud Resource Lab — Live Demo Script
 
 **Site:** https://cloud-simulation.vercel.app/
-**Length:** about 12 minutes (Simulate ≈ 7 min, Compare ≈ 5 min)
-**Tabs used:** Simulate and Compare only.
+**Length:** about 15 minutes (Guided demo ≈ 3 min, Simulate ≈ 7 min, Compare ≈ 5 min)
+**Tabs used:** Guided demo, Simulate and Compare. (Learn and Discussion are not used.)
 
 Everything below was checked on the live site. The defaults are **Spike (sale event)** workload, **Seed 16**, **56 tasks**. Do not change the seed. The same seed gives the same numbers every time.
 
@@ -12,13 +12,63 @@ Everything below was checked on the live site. The defaults are **Spike (sale ev
 
 ## Before you start
 
-- Open the site on the **Simulate** tab. Zoom the browser to about 125%.
-- Check that the seed says **16** and the preset is **Spike**.
+- Open the site and click the **Guided demo** tab. Zoom the browser to about 125%.
+- Check that the page says **Seed 16** and Step 1 is showing.
 - Keep a second tab open on the same site as a backup.
 
 ---
 
-# PART 1 — SIMULATE (about 7 minutes)
+# PART 1 — GUIDED DEMO (about 3 minutes)
+
+The Guided demo is the story in four steps. Each step changes **one** thing and keeps the workload and seed the same, so the numbers can be compared. Use it as the preview, then Simulate and Compare show how to do it yourself.
+
+## Opening (30 sec)
+
+▶ Point to the four step buttons at the top (1 Auto-scaling off, 2 Auto-scaling on, 3 Switch to spot, 4 Switch to Round Robin).
+
+**"Before I use the tools myself, here is the whole story in four steps. We use the same workload every time: a sale-event rush of 56 tasks. Each step changes one choice, and we watch what happens to waiting time and cost."**
+
+## Step 1: Auto-scaling off (40 sec)
+
+▶ Stay on Step 1. Point to the setup list and the four number cards.
+
+**"Step 1 is one server, no auto-scaling, first come first served, pay as you go."**
+
+**"Average wait is 61.1 minutes. The queue reaches 33 tasks. Utilization is 100% and the cost is only $1.38. The server never rests, but customers wait an hour."**
+
+## Step 2: Auto-scaling on (40 sec)
+
+▶ Click **Next step**.
+
+**"Step 2 turns auto-scaling on, from 1 up to 4 servers. The wait falls to 3.9 minutes, a 94% drop. The cost rises to $2.12, which is 54% more. Four servers were needed at the peak."**
+
+**"So we paid more money to buy a much faster service."**
+
+## Step 3: Switch to spot pricing (40 sec)
+
+▶ Click **Next step**.
+
+**"Step 3 keeps everything the same and changes only how we pay. Spot pricing cuts the cost by 70%, from $2.12 to $0.63. The wait stays at 3.9 minutes."**
+
+▶ Point to the **Restarts: 1** card.
+
+**"The catch: one task was interrupted and had to start again from zero. Spot is cheap, but not guaranteed."**
+
+## Step 4: Switch to Round Robin (40 sec)
+
+▶ Click **Next step**.
+
+**"Step 4 changes the scheduler to Round Robin. Every task gets a short turn. Average wait falls again to 2.3 minutes, and the longest wait drops from 17 to 8 minutes. The cost stays at $0.63."**
+
+▶ Point to the table **All four steps** at the bottom.
+
+**"Here are all four steps together: wait went from 61.1 to 2.3 minutes, and cost went from $1.38 to $0.63, with the same tasks. Now let me show you how each of these controls works."**
+
+▶ Click **Open this setup in the simulator** (or click the **Simulate** tab).
+
+---
+
+# PART 2 — SIMULATE (about 7 minutes)
 
 ## 1. Introduce the screen (1 min)
 
@@ -110,7 +160,7 @@ Everything below was checked on the live site. The defaults are **Spike (sale ev
 
 ---
 
-# PART 2 — COMPARE (about 5 minutes)
+# PART 3 — COMPARE (about 5 minutes)
 
 ▶ Click the **Compare** tab.
 
@@ -176,5 +226,6 @@ Everything below was checked on the live site. The defaults are **Spike (sale ev
 
 - **Numbers look different:** check that the seed is 16 and the preset is Spike.
 - **Page won't load:** use the backup tab, or run locally with `npm run preview`.
-- **Short on time:** skip Round Robin and Priority in step 5, and skip Comparison 3.
+- **Short on time:** the Guided demo already showed fixed vs auto-scaling, spot and Round Robin. In Simulate, skip steps 3 and 6 and go straight to the schedulers. In Compare, skip Comparison 3.
+- **Guided demo numbers look different:** press **Back** to Step 1 and check that it says Seed 16.
 - **Question about how it works:** open `Cloud-Resource-Lab-How-It-Works.pdf`.
